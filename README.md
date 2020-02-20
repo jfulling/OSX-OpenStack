@@ -27,7 +27,7 @@ This is a repository inspired largely from the [OSX-KVM repo from user *kholia*]
 
 ## UEFI Booting
 
-At least in the *Pike* release, OpenStack supports the ability to boot instances with UEFI. However, the OpenStack operator needs to add OVMF support to all applicable *Nova* (Compute) hosts. In Ubunt 18.04, this can be done simply via the following command:
+At least in the *Pike* release, OpenStack supports the ability to boot instances with UEFI. However, the OpenStack operator needs to add OVMF support to all applicable *Nova* (Compute) hosts. In Ubuntu 18.04, this can be done simply via the following command:
 
 ```
 sudo apt-get update -y && sudo apt-get install ovmf -y
@@ -172,7 +172,7 @@ In OpenStack, an appropriate MAC address can be added by simply creating a netwo
 
 ## Putting it All Together
 
-The `openstack_patch.sh` script in this repo contains an automated way to update instances running on the target compute host. The script will source an `openrc` file to gather credentials for the OpenStack deployment, and query all instances running on the *Nova* compute host. It will grep out metadata for an `os=OSX` metadata tag, and then update the XML in the method described above.
+The `patch-openstack-full.sh` script in this repo contains an automated way to update instances running on the target compute host. The script will source an `openrc` file to gather credentials for the OpenStack deployment, and query all instances running on the *Nova* compute host. It will grep out metadata for an `os=OSX` metadata tag, and then update the XML in the method described above.
 
 To run the script effectively, the following steps must be performed:
 

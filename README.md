@@ -57,11 +57,11 @@ Example: instance-00000001, instance-00000002 etc.
 
 When OpenStack creates instances, it generates .xml files containing the configuration and writes them to the disk. In regards to instance configuration, These files are read-only, and any modifications made to them are quickly destroyed. However, since OpenStack is just taking advantage of the libvirt APIs, we can manually make libvirt calls to define the instance ourselves.
 
-#### How can the AppleSMC Device be Added?
+#### How Can the AppleSMC Device be Added?
 
 In order to add the AppleSMC device with the secret key, we can modify the libvirt XML file for the instance to add the device directly via the <qemu:commandline> tag, or attempt to add the ISA device in the XML manually. Since it's easiest to just update the XML with the <qemu:commandline> tag, I decided to go with the following modifications to the instance XML file.
 
-Allowing  the usage of the <qemu:commandline> parameter:
+Enabling usage of the <qemu:commandline> parameter:
 
 Replace
 

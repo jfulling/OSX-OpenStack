@@ -92,7 +92,7 @@ cp /etc/libvirt/qemu/instance-XXXXXXXX.xml .
 sed -i (Add the xmlns to the top and add the qemu command line)
 
 #Destroy the current instance
-virsh destroy isntance-XXXXXXXX
+virsh destroy instance-XXXXXXXX
 
 #Copy over the new XML
 cp instance-XXXXXXXX.xml /etc/libvirt/qemu/
@@ -110,7 +110,7 @@ I found that scripting these changes prevents OpenStack from noticing the instan
 
 ## Ensuring the Proper QEMU Version is Used
 
-Unfortunately, simply updating QEMU and libvirt via a package manager doesn't always work. It's possible to build QEMU and replace the binaries called by OpenStack, or you can use an OS listed [in this article](https:/wiki.openstack.org/wiki/LibvirtDistroSupportMatrix) that contains QEMU 2.9 or greater by default. 
+Unfortunately, simply updating QEMU and libvirt via a package manager doesn't always work. It's possible to build QEMU and replace the binaries called by OpenStack, or you can use an OS listed [in this article](https://wiki.openstack.org/wiki/LibvirtDistroSupportMatrix) that contains QEMU 2.9 or greater by default. 
 
 I chose to deploy Ubuntu 18 which quickly solved this issue.
 
@@ -118,7 +118,7 @@ I chose to deploy Ubuntu 18 which quickly solved this issue.
 
 ## Ensuring the Right Machine Type is Used (`pc-q35-2.9`)
 
-OpenStack allows a user to change the instance machine type .uring the image importing stage. This can be done simply in the image metadata upon import.
+OpenStack allows a user to change the instance machine type during the image importing stage. This can be done simply in the image metadata upon import.
 
 ---
 

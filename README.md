@@ -130,7 +130,7 @@ Instead, I've had more success with the `--usbdevice tablet` and `--usbdevice ke
 
 ---
 
-## Consolidation into a Single HDD
+## Consolidation Into a Single HDD
 
 Following the instructions in *kholia*'s repo, it is possible to create a single bootable OSX HDD. Since that is not a focus of this repo (as it does not explore how OpenStack instance configuration works), I will not be covering the steps here.
 
@@ -182,6 +182,7 @@ To run the script effectively, the following steps must be performed:
 4. Create a network port for the instance with a custom MAC address
 5. Create a flavor with the proper CPU and RAM specs (e.g. 2 cores, 3GB)
 6. Begin deploying the instance, adding a custom `os` metadata tag with the value of `OSX`, assigning the instance the proper network port and flavor
-7. Once the instance is deployed, run the script (ideally on a `cron` schedule -- the script has checks in place to make sure images aren't needlessly destroyed).
+7. Download the `openrc` file from the OpenStack dashboard and place it in the same directory as the script
+8. Once the instance is deployed, run the script (ideally on a `cron` schedule -- the script has checks in place to make sure images aren't needlessly destroyed).
 
-Read the XML, and all the setting should be in place, showing that the script ran successfully!
+Read the XML and all the setting should be in place, showing that the script ran successfully!
